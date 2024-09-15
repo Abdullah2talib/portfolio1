@@ -1,0 +1,781 @@
+/* Reset some basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #013220; /* Darker green background */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #011d14; /* Darker green background */
+    border-bottom: 2px solid #013220; /* Change line color to #013220 */
+}
+
+/* Neon effect for logo and navigation */
+.logo h1,
+.navbar ul li a {
+    font-size: 24px;
+    color: #E7C274; /* Neon color */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Navbar styling */
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px; /* Increased gap between navigation items */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px; /* Padding around each nav item */
+}
+
+/* Neon effect on hover */
+.navbar ul li a:hover,
+.logo h1:hover {
+    color: #FFF; /* White color on hover */
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FFF; /* Brighter glow effect on hover */
+}
+
+/* Main content styling */
+.section {
+    padding: 60px 20px; /* Increased padding for sections */
+    text-align: center;
+}
+
+.section h2,
+.section h3,
+.section p {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #011d14; /* Even darker shade of green */
+    gap: 20px;
+    position: relative;
+}
+
+.home-content {
+    max-width: 800px; /* Increased max-width to make the blur container larger */
+    text-align: center;
+    padding: 40px; /* Added padding for home content */
+    position: relative;
+    z-index: 2; /* Ensures text is above the blur */
+}
+
+
+/* Blurred background container styling */
+.blur-background {
+    background-color: rgba(255, 255, 255, 0.112);
+    backdrop-filter: blur(80px); /* Increased blur effect */
+    padding: 60px 60px; /* Adjusted padding for balanced spacing */
+    border-radius: 35px; /* Rounded edges */
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6),
+                0 0 30px #E7C274, /* Light glow effect */
+                0 0 60px #E7C274; /* Enhanced light glow effect */
+    width: calc(100% + 500px); /* Further extended width */
+    max-width: none; 
+    height: auto; /* Allow dynamic height */
+    min-height: 400px; /* Ensure minimum height */
+    margin-left: -250px; /* Increase negative margin to bring more to the left */
+    margin-right: -250px; /* Increase negative margin to bring more to the right */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 40px; /* Adjust padding from the left to bring text closer */
+    position: relative; /* Position relative for absolute positioning of button */
+    animation: blinkEffect 4s infinite ease-in-out; /* Slowed down animation duration */
+}
+
+/* Keyframes for the blinking effect */
+@keyframes blinkEffect {
+    0%, 100% {
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6),
+                    0 0 30px #E7C274, /* Light glow effect */
+                    0 0 60px #E7C274; /* Enhanced light glow effect */
+    }
+    50% {
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6),
+                    0 0 30px rgba(231, 194, 116, 0.3), /* Dim glow effect */
+                    0 0 60px rgba(231, 194, 116, 0.3); /* Dim glow effect */
+    }
+}
+
+/* Text styling for improved visual hierarchy */
+.intro-text,
+.name-text,
+.role-text,
+.description {
+    width: 100%; /* Make text elements use full width */
+    max-width: 100%; /* Allow text to extend till the end */
+}
+
+.intro-text {
+    font-size: 24px; /* Smaller font for intro text */
+    font-weight: 600; /* Semi-bold */
+    color: white;
+    margin-bottom: 10px;
+    text-align: left; /* Align text to the left */
+}
+
+.name-text {
+    font-size: 48px; /* Larger font size for emphasis */
+    font-weight: 800; /* Extra bold for emphasis */
+    color: white;
+    margin-bottom: 10px;
+    text-align: left; /* Align text to the left */
+}
+
+.role-text {
+    font-size: 26px; /* Slightly smaller font size for role */
+    font-weight: 700; /* Bold for role description */
+    margin-bottom: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.highlight {
+    color: #9fdfa0; /* Blue color for emphasis */
+}
+
+.description {
+    font-size: 18px; /* Increased font size for readability */
+    line-height: 1.6; /* Improved line spacing */
+    color: #d1d1d1; /* Softer white for less contrast */
+    text-align: left; /* Align text to the left */
+}
+
+
+/* New Download Button Styling */
+.Download-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 12px 20px;
+    color: #011d14;
+    background: rgb(231, 194, 116);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em rgb(231, 194, 116);
+    letter-spacing: 0.05em;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute; /* Position button absolutely */
+    right: 60px; /* Distance from the right edge */
+    bottom: 40px; /* Distance from the bottom edge */
+    transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    text-shadow: 0 0 5px #E7C274, 0 0 10px #E7C274, 0 0 15px #E7C274; /* Neon glow effect */
+}
+
+.Download-button svg {
+    margin-right: 8px;
+    width: 25px;
+}
+
+.Download-button:hover {
+    background-color: #E7C274; /* Change background on hover */
+    color: #FFF; /* Change text color on hover */
+    box-shadow: 0 0 15px #E7C274, 0 0 20px #E7C274, 0 0 30px #E7C274; /* Neon glow effect on hover */
+    text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF; /* Brighter neon effect on hover */
+}
+
+.Download-button:active {
+    box-shadow: 0 0.3em 1em -0.5em rgb(88, 71, 116);
+}
+
+.Download-button::before {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: #011d14;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.Download-button::after {
+    content: "";
+    width: 4px;
+    height: 40%;
+    background-color: #011d14;
+    position: absolute;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    right: 0;
+    transition: all 0.2s;
+}
+
+.highlight {
+    color: #E7C274; /* Highlight color */
+    transition: opacity 0.5s ease; /* Smooth transition for text change */
+}
+
+
+/* About Section Heading */
+#about h2 {
+    font-size: 38px; /* Increase font size */
+    font-weight: bold;
+    color: #E7C274; /* Change color to E7C274 */
+    margin-bottom: 20px; /* Adjust margin if needed */
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about-image {
+    width: 45%; /* Adjust width to control image size */
+    padding-right: 20px;
+}
+
+.about-image img {
+    width: 100%; 
+    height: auto;
+    max-width: 420px; /* Optional: Set a max-width to prevent the image from becoming too large */
+}
+
+.about-text {
+    width: 50%;
+    color: white;
+    text-align: left; /* Align text from left to right */
+}
+
+.about-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #E7C274; /* Customize the color */
+}
+
+.neon-effect {
+    color: #ffffff; /* Neon color for Developer */
+    text-shadow: 0 0 5px #E7C274, 0 0 5px #E7C274, 0 0 5px #E7C274, 0 0 5px #E7C274; /* Neon glow effect */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+
+/* Projects Section */
+.projects-section {
+    display: flex;
+    flex-direction: column; /* Make the section column-oriented */
+    align-items: center; /* Center the "Projects" heading */
+    padding: 100px 30px; /* Increase padding to add height */
+    background-color: #011d14; /* Background color for projects section */
+}
+
+/* Center the heading */
+.projects-section h2 {
+    text-align: center; /* Center-align the heading */
+    font-size: 36px; /* Adjust size as needed */
+    color: #E7C274; /* Updated color to E7C274 */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Container for sidebar and content */
+.projects-container {
+    display: flex; /* Align sidebar and content side by side */
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%; /* Adjust width to center content */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 450px; /* Keep the width of the sidebar */
+    display: flex;
+    flex-direction: column;
+    background-color: #013220;
+    padding: 30px; /* Increase padding for larger sidebar */
+    border-radius: 10px;
+    margin-right: 20px; /* Reduce space between sidebar and content */
+    margin-left: 80px; /* Add margin to move the sidebar to the right */
+    box-shadow: 0 0 30px #E7C274, 0 0 30px #E7C274; /* Initial neon glow effect around the sidebar */
+    position: relative; /* Position relative to allow pseudo-elements */
+    animation: neonGlow 5s infinite; /* Animation for the neon glow */
+}
+
+/* Streaming neon glow effect */
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 10px #E7C274, 0 0 10px #E7C274, 0 0 10px #E7C274;
+    }
+    50% {
+        box-shadow: 0 0 20px #E7C274, 0 0 20px #E7C274, 0 0 20px #E7C274;
+    }
+    100% {
+        box-shadow: 0 0 10px #E7C274, 0 0 10px #E7C274, 0 0 10px #E7C274;
+    }
+}
+
+/* Neon Effect for Sidebar Buttons */
+.sidebar-button {
+    background-color: #E7C274; /* Background color for buttons */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 20px; /* Increase padding for larger buttons */
+    font-size: 18px; /* Increase font size for larger text */
+    margin-bottom: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s, text-shadow 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    border-radius: 10px;
+    text-shadow: 0 0 5px #E7C274, 0 0 5px #E7C274, 0 0 5px #E7C274; /* Neon glow effect for button text */
+    box-shadow: 0 0 5px #E7C274; /* Neon glow effect around each button */
+}
+
+.sidebar-button.active {
+    background-color: #E7C274; /* Active button color */
+    color: #013220; /* Change text color when active */
+    font-weight: bold;
+    box-shadow: 0 0 5px #E7C274, 0 0 5px #E7C274; /* Stronger neon effect for active button */
+}
+
+.sidebar-button:hover {
+    background-color: #E7C274; /* Hover effect */
+    color: #FFF; /* Change text color on hover */
+    text-shadow: 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF; /* Brighter neon glow effect on hover */
+    box-shadow: 0 0 5px #E7C274, 0 0 5px #E7C274; /* Brighter neon glow effect on hover */
+}
+
+/* Content Area Styling */
+.content-area {
+    flex: 1; /* Takes remaining space */
+    padding: 15px;
+    color: #333; /* Default text color for the content area */
+    background-color: #013220; /* Background color for content area */
+    border-radius: 8px; /* Rounded corners for content area */
+    margin-left: auto; /* Push content area to the right */
+    max-width: 800px; /* Increase maximum width to make it larger */
+    position: relative; /* Position relative to contain absolute elements */
+    overflow: hidden; /* Hide content overflow during animation */
+    transition: height 0.5s ease, opacity 0.5s ease; /* Smooth transition for height and opacity */
+}
+
+/* Smooth Transition for Content Visibility */
+.content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+.content.active {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Smooth transition for showing content */
+}
+
+/* Button Container */
+.button-container {
+    display: flex; /* Use flex to position the button */
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 20px; /* Add some margin to separate the button from the text */
+}
+
+/* Info Button Styling */
+.info-button {
+    padding: 15px 25px; /* Increase padding to make button bigger */
+    background-color: #E7C274; /* Button background color */
+    color: #013220; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added box-shadow for neon effect */
+    box-shadow: 0 0 5px #E7C274; /* Initial light neon glow */
+}
+
+.info-button:hover {
+    background-color: #E7C274; /* Hover effect for button */
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 0 10px #E7C274, 0 0 20px #E7C274; /* Brighter neon glow on hover */
+}
+
+/* Paragraph styling within content */
+.content-area p {
+    color: #ffffff; /* Paragraph text color */
+    font-size: 20px;
+    margin-bottom: 20px; /* Add margin below the text for spacing */
+    text-align: left; /* Align text from left to right */
+}
+
+
+
+
+/* Skills Section Styling */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Skills Container Styling */
+.skills-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #011d14;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Container Styling */
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    margin-right: 50px; /* Adjust margin to move icons to the right */
+}
+
+/* Icon Row Styling */
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Individual Skill Icon Styling */
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #E7C274; /* Change the background color of the icons */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.skill-icon img {
+    width: 60px; /* Increase size of the SVG icon */
+    height: 60px; /* Increase size of the SVG icon */
+    transition: transform 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Skills Illustration Styling */
+.skills-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; /* Adjust width to balance the layout */
+    padding-left: 30px; /* Add padding to create space between icons and image */
+}
+
+.skills-illustration img {
+    width: 100%;
+    max-width: 500px; /* Increase max-width for larger image */
+    height: auto;
+}
+
+/* Skills Title Styling */
+.section h2 {
+    font-size: 48px;
+    color: #E7C274;
+    margin-bottom: 20px;
+}
+
+
+
+/* Contact Section Styling */
+.contact-section {
+    background-color: #011d14; /* Set background color for entire contact section */
+    padding: 40px 20px; /* Add some padding for spacing */
+    color: white; /* Default text color */
+    text-align: center; /* Center align text */
+}
+
+/* Contact Form Styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: inherit;
+    gap: 15px;
+    padding: 50px 50px;
+    background-color: #171717;
+    border-radius: 20px;
+    max-width: 600px; /* Set max-width to limit form size */
+    width: 100%; /* Full width up to the maximum width */
+    margin: 0 auto; /* Center align the form horizontally */
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 1em;
+    color: #E7C274;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.8em;
+    padding: 0.8em;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #ccd6f6;
+    padding: 1em;
+    font-size: 1em;
+}
+
+.sendMessage-btn {
+    cursor: pointer;
+    padding: 1.5em 8em;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    color: #E7C274;
+    font-weight: bold;
+    outline: 1px solid #E7C274;
+    transition: all 0.3s ease-in-out;
+}
+
+.sendMessage-btn:hover {
+    background-color: #E7C274;
+    color: #000;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-card1 {
+    background-color: #013220; /* Use the same background color */
+    border-radius: 22px;
+    padding: 3em;
+    transition: all 0.3s;
+    max-width: 650px; /* Set max-width to limit card size */
+    width: 100%; /* Full width up to the maximum width */
+    margin: 0 auto; /* Center align the card horizontally */
+}
+
+.form-card1:hover {
+    box-shadow: 10px 20px 30px 1px #E7C274;
+}
+
+.form-card2 {
+    transition: all 0.2s;
+    padding: 2em;
+    border-radius: 20px;
+}
+
+.form-card2:hover {
+    transform: scale(0.98);
+}
+
+
+/* Footer styling */
+.footer {
+    display: flex; /* Add flexbox to align content */
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 30px;
+    background-color: #013220; /* Set the desired background color */
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    margin-top: -50px; /* Adjust space between the contact section and the footer */
+  }
+  
+  /* Card styling for social media icons */
+  .card {
+    max-width: fit-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row; /* Display icons horizontally */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    backdrop-filter: blur(15px);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.192),
+      inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164);
+    transition: 0.5s;
+    margin-bottom: 20px; /* Add some space below the card */
+  }
+  
+  .card ul {
+    padding: 1rem;
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+  }
+  
+  .card ul li {
+    cursor: pointer;
+  }
+  .card:hover {
+    animation: ease-out 5s;
+    background: rgba(173, 173, 173, 0.05);
+  }
+  
+  .card ul {
+    padding: 1rem;
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+  }
+  
+  .card ul li {
+    cursor: pointer;
+  }
+  
+  .svg {
+    transition: all 0.3s;
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    color: rgb(255, 174, 0);
+    fill: currentColor;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+      inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+  }
+  
+  .text {
+    opacity: 0;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.3s;
+    color: rgb(255, 174, 0);
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 9999;
+    box-shadow: -5px 0 1px rgba(153, 153, 153, 0.2),
+      -10px 0 1px rgba(153, 153, 153, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.3),
+      inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.082);
+  }
+  
+  /* Isometric projection hover effects */
+  .iso-pro {
+    transition: 0.5s;
+  }
+  .iso-pro:hover a > .svg {
+    transform: translate(15px, -15px);
+    border-radius: 100%;
+  }
+  
+  .iso-pro:hover .text {
+    opacity: 1;
+    transform: translate(25px, -2px) skew(-5deg);
+  }
+  
+  .iso-pro:hover .svg {
+    transform: translate(5px, -5px);
+  }
+  
+  .iso-pro span {
+    opacity: 0;
+    position: absolute;
+    color: #1877f2;
+    border-color: #1877f2;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+      inset 0 0 5px rgba(255, 255, 255, 0.5), 0 5px 5px rgba(0, 0, 0, 0.164);
+    border-radius: 50%;
+    transition: all 0.3s;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .iso-pro:hover span {
+    opacity: 1;
+  }
+  
+  .iso-pro:hover span:nth-child(1) {
+    opacity: 0.2;
+  }
+  
+  .iso-pro:hover span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px);
+  }
+  
+  .iso-pro:hover span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+  }
+  p{
+    color: #FFF;
+  }
+  
+/* Responsive styling */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .navbar ul li a {
+        padding: 15px 20px;
+    }
+}
